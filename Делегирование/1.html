@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Делегирование</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="menu">
+    <button data-action="save">Сохранить</button>
+    <button data-action="search">Поиск</button>
+    <button data-action="load">Загрузить</button>
+  </div>
+  <br>
+  <hr>
+
+  <div id="counter">
+    Counter <input type="button" data-counter value="1">
+    One More Counter <input type="button" data-counter value="1">
+  </div>
+
+  <hr>
+  <br>
+
+  <button data-form-id="subsribe-mail">Показать форму подписки</button>
+  <form class="hidden" id="subsribe-mail">
+    Введите вашу почту: <input type="email" name="email">
+  </form>
+
+  <script>
+    const menu = document.getElementById('menu')
+
+    class Menu {
+      constructor(el) {
+        this._el = el
+        el.onclick = this.onClick.bind(this)
+      }
+
+      save() { console.log('save') }
+      search() { console.log('search') }
+      load() { console.log('load') }
+
+      onClick(e) {
+        const action = e.target.dataset.action
+        if (action) {
+          this[action]()
+        }
+      }
+    }
+
+    new Menu(menu)
+
+    document.getElementById('counter').addEventListener('click', e => {
+      if (e.target.dataset.counter !== undefined) {
+        e.target.value = +e.target.value + 1
+      }
+    })
+
+    document.addEventListener('click', e => {
+      const id = e.target.dataset.formId
+      if (id) {
+        document.getElementById(id).classList.toggle('hidden')
+      }
+    })
+  </script>
+</body>
+
+</html>

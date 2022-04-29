@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .bold {
+      font-weight: bolder;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    ul,
+    li {
+      width: fit-content;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul class="tree" id="tree">
+    <li>Животные
+      <ul>
+        <li>Млекопитающие
+          <ul>
+            <li>Коровы</li>
+            <li>Ослы</li>
+            <li>Собаки</li>
+            <li>Тигры</li>
+          </ul>
+        </li>
+        <li>Другие
+          <ul>
+            <li>Змеи</li>
+            <li>Птицы</li>
+            <li>Ящерицы</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Рыбы
+      <ul>
+        <li>Аквариумные
+          <ul>
+            <li>Гуппи</li>
+            <li>Скалярии</li>
+          </ul>
+        </li>
+        <li>Морские
+          <ul>
+            <li>Морская форель</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    const lis = document.querySelectorAll('li')
+
+    lis.forEach(li => {
+      const span = document.createElement('span')
+      li.prepend(span)
+      span.append(span.nextSibling)
+    })
+
+
+    document.addEventListener('mouseover', e => {
+      if (!e.target.matches('li > span')) return;
+
+      e.target.style.cursor = 'pointer'
+      e.target.classList.add('bold')
+    })
+    document.addEventListener('mouseout', e => {
+      if (!e.target.matches('li > span')) return;
+
+      e.target.style.cursor = 'auto'
+      e.target.classList.remove('bold')
+
+    })
+
+    document.addEventListener('click', e => {
+      const target = e.target;
+      if (!target.matches('li > span')) return
+
+      target.parentNode.querySelector('ul')?.classList.toggle('hidden')
+
+    })
+
+  </script>
+
+</body>
+
+</html>

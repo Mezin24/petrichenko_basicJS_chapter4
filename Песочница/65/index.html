@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SetTimeout Animation</title>
+  <script src="script.js" defer></script>
+  <style>
+    * {
+      /* box-sizing: border-box; */
+    }
+
+    #btn-animation {
+      border: yellowgreen;
+      background-color: yellow;
+      padding: 1em 2em;
+      border-radius: 7px;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    #btn-animation:hover {
+      background-color: rgb(234, 234, 15);
+    }
+
+    #btn-animation:active {
+      transform: scale(.95);
+    }
+
+
+    .field {
+      margin-top: 1em;
+      border: 5px solid red;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+
+    .box {
+      background-color: blue;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      /* transition: all 0.3s; */
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn-animation">Animation</button>
+  <div class="field">
+    <div class="box"></div>
+  </div>
+</body>
+
+</html>

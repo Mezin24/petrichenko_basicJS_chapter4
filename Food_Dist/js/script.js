@@ -38,13 +38,22 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   ///////// TIMER ///////////////////////
-  const deadline = '2022-05-01T11:41:00';
+  const deadline = '2022-05-01T11:48:00';
   setTimer('.timer', deadline);
-  console.log(getDeadlineRemaining(deadline));
 
   function getDeadlineRemaining(endtime) {
-    const remaining = Date.parse(endtime) - Date.parse(new Date()),
-      days = Math.floor(remaining / (1000 * 60 * 60 * 24)),
+    const remaining = Date.parse(endtime) - Date.parse(new Date());
+    if (remaining <= 0) {
+      return {
+        remaining: 0,
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      };
+    }
+
+    const days = Math.floor(remaining / (1000 * 60 * 60 * 24)),
       hours = Math.floor((remaining / (1000 * 60 * 60)) % 24),
       minutes = Math.floor((remaining / (1000 * 60)) % 60),
       seconds = Math.floor((remaining / 1000) % 60);
@@ -80,16 +89,11 @@ window.addEventListener('DOMContentLoaded', () => {
       const t = getDeadlineRemaining(endtime);
       if (t.remaining <= 0) {
         clearInterval(timerId);
-        daysEl.innerHTML = addZero(0);
-        hoursEl.innerHTML = addZero(0);
-        minutesEl.innerHTML = addZero(0);
-        secondsEl.innerHTML = addZero(0);
-      } else {
-        daysEl.innerHTML = addZero(t.days);
-        hoursEl.innerHTML = addZero(t.hours);
-        minutesEl.innerHTML = addZero(t.minutes);
-        secondsEl.innerHTML = addZero(t.seconds);
       }
+      daysEl.innerHTML = addZero(t.days);
+      hoursEl.innerHTML = addZero(t.hours);
+      minutesEl.innerHTML = addZero(t.minutes);
+      secondsEl.innerHTML = addZero(t.seconds);
     }
   }
 });

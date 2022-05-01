@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .box {
+      margin: 50px auto 10px;
+      padding: 1em;
+      border: 3px solid grey;
+      width: 300px;
+      height: 400px;
+      overflow-y: scroll;
+    }
+
+    button {
+      font-size: 1.2rem;
+      padding: .3em 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Title</h1>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo non quidem minus, rem numquam unde cumque tempora
+    facilis nulla, natus deserunt tenetur, quaerat repellat delectus quas quam odit! Veritatis tenetur, consectetur aut
+    obcaecati reprehenderit minima quae quos cum? Delectus nam numquam animi veritatis perspiciatis voluptates,
+    blanditiis saepe cumque tenetur labore quas vero quia est laborum ipsum recusandae libero. Culpa in soluta ad?
+    Obcaecati, sed velit qui perspiciatis nostrum maxime. Optio blanditiis beatae maxime, saepe molestias adipisci
+    dolores debitis quibusdam quis culpa? Nihil obcaecati aliquam ipsa. Veritatis, molestias facilis. Aperiam,
+    consequatur. Voluptas laudantium facere praesentium rem suscipit, voluptates ratione nesciunt sit. Corporis placeat,
+    sunt ab eveniet a quis repellendus iusto veniam consequuntur alias suscipit neque nihil odit voluptates dolores
+    maxime. Recusandae distinctio culpa libero, assumenda adipisci illo consectetur quia reprehenderit itaque totam
+    amet. Culpa aliquam consequatur cumque, inventore voluptas repudiandae, obcaecati explicabo delectus quia
+    recusandae, nam facere optio? Ut illum facilis, reiciendis dolores at assumenda sunt ratione voluptate. Similique,
+    molestias fugiat. Assumenda, animi architecto. Asperiores saepe eaque at quisquam, blanditiis, earum commodi dolores
+    optio praesentium non omnis laudantium accusamus, ut nam quibusdam pariatur corporis animi! Laboriosam vitae, ab
+    dignissimos odio nisi officia tenetur quam dolorum ducimus iste consequatur error quis natus. Soluta cumque animi
+    ducimus, veritatis necessitatibus facere pariatur provident, minus ullam iusto explicabo? Consectetur, odio et
+    doloribus in voluptate facilis rerum quo sed, sunt accusantium at perferendis repellat hic voluptatum facere
+    laboriosam eum. Natus assumenda totam accusamus quia dignissimos mollitia ea magnam consectetur asperiores quisquam
+    ut adipisci ratione, hic fugit error voluptatem nemo molestias vitae quidem molestiae alias obcaecati? Libero ex est
+    necessitatibus maxime blanditiis, nam, iure pariatur quas sint quasi reiciendis perferendis aperiam saepe provident
+    eos alias illum similique! Officiis voluptatibus tempore, modi ratione deleniti pariatur, blanditiis sint molestias
+    praesentium corrupti beatae quidem voluptatem minima assumenda tenetur distinctio natus?</p>
+  <h2>Second Title</h2>
+  <div class="box">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi veritatis aliquam aperiam nemo doloribus nihil rem
+    quos voluptatem mollitia temporibus? Eveniet voluptatibus nisi tempore corrupti eligendi veniam commodi explicabo
+    ipsa tenetur mollitia quod, consequatur incidunt quae quo nostrum nihil sapiente excepturi dicta exercitationem
+    itaque? At obcaecati ipsum, pariatur expedita architecto modi odit alias ex libero fugit praesentium aliquid
+    eligendi tenetur voluptatem. Officiis ratione vel deserunt odio non consequatur adipisci omnis! Dolores, fugiat
+    molestias nesciunt debitis sed tempora repellendus, maxime obcaecati soluta deleniti iure eius a eaque voluptates
+    adipisci pariatur incidunt maiores velit quisquam distinctio. Rem optio modi ex consequatur libero, ullam, hic
+    facilis, totam incidunt neque similique enim quo! Impedit minus ratione corrupti similique quos quod deleniti
+    aperiam mollitia. Consectetur laboriosam harum minima esse atque, unde est at, iusto voluptatum, quibusdam deleniti.
+    Quos, ratione consectetur. Quibusdam explicabo cumque repellat numquam animi voluptatum laborum? Non vitae libero
+    ipsam laudantium, impedit repellendus eaque aut quo animi quam obcaecati est quia praesentium laborum doloribus
+    harum officiis culpa veniam! Atque quos, temporibus aut dolorum vel tempora recusandae fugit asperiores ipsam. Aut
+    dicta inventore consequuntur dignissimos provident, a recusandae delectus. Fugit magni hic aut? Tenetur corrupti
+    illum iusto labore dicta praesentium, harum ipsum vero inventore officia explicabo voluptates ab ut perspiciatis
+    odio sapiente voluptatem nostrum quo magni deserunt! Omnis saepe molestias eius molestiae, quae sint debitis aliquid
+    numquam? Porro cupiditate omnis dolore, magnam beatae soluta necessitatibus eos, delectus nesciunt recusandae odio
+    architecto fugit modi assumenda, eligendi laboriosam corrupti exercitationem molestias rerum sunt debitis! Odit
+    asperiores doloremque quidem error fugiat incidunt placeat minus dicta nesciunt quod, totam ad, impedit quam illo
+    exercitationem? Consequatur, aliquid vitae quam odit minus perspiciatis, illum commodi, non eum qui praesentium
+    nostrum. Hic nemo voluptatem quod quisquam odit quas nihil pariatur alias repellat voluptate. Minima in dolores
+    eveniet laudantium ad, architecto doloribus.
+  </div>
+  <button>Click</button>
+  <button class="button2">To TiTle</button>
+
+  <script>
+    const box = document.querySelector('.box')
+    const button = document.querySelector('button')
+    const button2 = document.querySelector('.button2')
+
+    function increaseBox(el) {
+      const allHeigth = el.scrollHeight
+      el.style.height = allHeigth + 'px'
+      el.style.overflow = 'hidden'
+    }
+
+    button.addEventListener('click', () => increaseBox(box))
+
+    button2.addEventListener('click', () => {
+      const h2 = document.querySelector('h2')
+      const { bottom } = h2.getBoundingClientRect()
+      // document.documentElement.scrollTop = Math.abs(top)
+      window.scrollTo(0, Math.abs(bottom))
+    })
+  </script>
+</body>
+
+</html>

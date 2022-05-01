@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchange</title>
+    <script src="app.js" defer></script>
+    <style>
+      label {
+        display: block;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .form-control:not(:last-child) {
+        margin-bottom: 1em;
+      }
+      input {
+        font-size: 1.2rem;
+        outline-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Exchange</h1>
+    <div class="form-control">
+      <label for="rub">RUB</label>
+      <input type="text" name="rub" id="rub" />
+    </div>
+    <div class="form-control">
+      <label for="usd">Usd</label>
+      <input type="text" name="usd" id="usd" />
+    </div>
+  </body>
+</html>

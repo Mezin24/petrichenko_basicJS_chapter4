@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('show');
     modal.classList.remove('hide');
     document.body.style.overflowY = 'hidden';
-    clearInterval(modalTimerId);
+    // clearInterval(modalTimerId);
   }
 
   modalBtns.forEach((btn) => {
@@ -130,7 +130,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const modalTimerId = setTimeout(openModal, 5000);
+  // const modalTimerId = setTimeout(openModal, 5000);
 
   closeModalBtn.addEventListener('click', closeModal);
 
@@ -150,4 +150,62 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('scroll', openModalByScroll);
+
+  ///////// CARDS CLASSES ///////////////////////
+  const data = [
+    {
+      img: 'vegy',
+      menu: '"Фитнес"',
+      descr:
+        'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих      овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+      price: 229,
+      parentSelector: '.menu__field > .container',
+    },
+    {
+      img: 'elite',
+      menu: '“Премиум”',
+      descr:
+        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода        в ресторан!',
+      price: 550,
+      parentSelector: '.menu__field > .container',
+    },
+    {
+      img: 'post',
+      menu: '"Постное"',
+      descr:
+        '>Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие        продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное        количество белков за счет тофу и импортных вегетарианских стейков.',
+      price: 430,
+      parentSelector: '.menu__field > .container',
+    },
+  ];
+  class Card {
+    constructor({ img, menu, descr, price, parentSelector }) {
+      this.img = img;
+      this.menu = menu;
+      this.descr = descr;
+      this.price = price;
+      this.parent = document.querySelector(parentSelector);
+    }
+
+    render() {
+      const html = `
+      <div class="menu__item">
+        <img src="img/tabs/${this.img}.jpg" alt="${this.img}">
+        <h3 class="menu__item-subtitle">Меню ${this.menu}</h3>
+        <div class="menu__item-descr">${this.descr}</div>
+        <div class="menu__item-divider"></div>
+        <div class="menu__item-price">
+            <div class="menu__item-cost">Цена:</div>
+            <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+        </div>
+      </div>
+      `;
+
+      this.parent.insertAdjacentHTML('beforeend', html);
+    }
+  }
+
+  data.forEach((item) => {
+    new Card(item).render();
+  });
 });

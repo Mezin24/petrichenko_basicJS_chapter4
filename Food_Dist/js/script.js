@@ -189,7 +189,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     render() {
       const html = `
-      <div class="menu__item">
+      <div class="menu__item ">
         <img src="img/tabs/${this.img}.jpg" alt="${this.img}">
         <h3 class="menu__item-subtitle">Меню ${this.menu}</h3>
         <div class="menu__item-descr">${this.descr}</div>
